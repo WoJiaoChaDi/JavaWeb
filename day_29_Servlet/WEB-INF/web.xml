@@ -29,7 +29,7 @@
         <load-on-startup>0</load-on-startup>
     </servlet>
 
-    <!--配置通配符-->
+    <!--配置通配符  带拓展名的不能带/  -->
     <servlet-mapping>
         <servlet-name>AnyName</servlet-name>
         <url-pattern>*.do</url-pattern>
