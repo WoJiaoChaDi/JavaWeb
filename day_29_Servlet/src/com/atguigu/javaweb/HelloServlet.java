@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import java.io.IOException;
+import java.util.Enumeration;
 
 public class HelloServlet implements Servlet{
 
@@ -16,6 +17,19 @@ public class HelloServlet implements Servlet{
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         System.out.println("HelloServlet's init...");
+
+        //获取<init-param>
+        Enumeration<String> initParameterNames = servletConfig.getInitParameterNames();
+        while (initParameterNames.hasMoreElements()){
+            String name = initParameterNames.nextElement();
+            String value = servletConfig.getInitParameter(name);
+            System.out.println("name  -->  " + name);
+            System.out.println("value  -->  " + value);
+        }
+
+        //获取<servlet-name>
+        String servletName = servletConfig.getServletName();
+        System.out.println(servletName);
     }
 
     @Override

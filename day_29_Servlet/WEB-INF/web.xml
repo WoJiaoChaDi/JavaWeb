@@ -10,8 +10,20 @@
         <servlet-name>helloServlet</servlet-name>
         <!--Servlet 的全类名-->
         <servlet-class>com.atguigu.javaweb.HelloServlet</servlet-class>
+
+        <!--配置Servlet 的初始化参数。该节点必须在 load-on-startup  前面-->
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>1230</param-value>
+        </init-param>
+
         <!-- 可以指定 Servlet 被创建的时机,若为负数, 则在第一次请求时被创建.若为 0 或正数, 则在当前WEB 应用被Serlvet 容器加载时创建实例, 且数组越小越早被创建. -->
         <load-on-startup>0</load-on-startup>
+
     </servlet>
 
     <servlet-mapping>
@@ -26,7 +38,7 @@
     <servlet>
         <servlet-name>AnyName</servlet-name>
         <servlet-class>com.atguigu.javaweb.HelloServlet</servlet-class>
-        <load-on-startup>0</load-on-startup>
+        <load-on-startup>-1</load-on-startup>
     </servlet>
 
     <!--配置通配符  带拓展名的不能带/  -->
