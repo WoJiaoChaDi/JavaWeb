@@ -6,12 +6,18 @@
     
     <!--配置和映射 Servlet-->
     <servlet>
+        <!--Servlet 注册的名字-->
         <servlet-name>helloServlet</servlet-name>
+        <!--Servlet 的全类名-->
         <servlet-class>com.atguigu.javaweb.HelloServlet</servlet-class>
+        <!-- 可以指定 Servlet 被创建的时机 -->
+        <load-on-startup>0</load-on-startup>
     </servlet>
 
     <servlet-mapping>
+        <!--需要和某一个 servlet 节点的 servlet-name 子节点的文本节点一致-->
         <servlet-name>helloServlet</servlet-name>
+        <!--映射具体的访问路径： / 代表当前Web应用的根目录-->
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
     
