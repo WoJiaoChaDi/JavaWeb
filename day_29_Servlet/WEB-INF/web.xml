@@ -3,7 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-    
+
+    <!--配置当前WEB 应用的初始化参数(全局的参数)-->
+    <context-param>
+        <param-name>driver</param-name>
+        <param-value>com.mysql.jdbc.Driver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>jdbcUrl</param-name>
+        <param-value>jdbc:mysql://atguigu</param-value>
+    </context-param>
+
+
     <!--配置和映射 Servlet-->
     <servlet>
         <!--Servlet 注册的名字-->
@@ -11,7 +22,7 @@
         <!--Servlet 的全类名-->
         <servlet-class>com.atguigu.javaweb.HelloServlet</servlet-class>
 
-        <!--配置Servlet 的初始化参数。该节点必须在 load-on-startup  前面-->
+        <!--配置Servlet 的初始化参数（局部的）。该节点必须在 load-on-startup  前面-->
         <init-param>
             <param-name>user</param-name>
             <param-value>root</param-value>
@@ -22,7 +33,7 @@
         </init-param>
 
         <!-- 可以指定 Servlet 被创建的时机,若为负数, 则在第一次请求时被创建.若为 0 或正数, 则在当前WEB 应用被Serlvet 容器加载时创建实例, 且数组越小越早被创建. -->
-        <load-on-startup>0</load-on-startup>
+        <load-on-startup>-1</load-on-startup>
 
     </servlet>
 
