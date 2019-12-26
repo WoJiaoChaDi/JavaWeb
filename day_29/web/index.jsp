@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.atguigu.javaweb.Person" %><%--
   Created by IntelliJ IDEA.
   User: wumiao
   Date: 2019/12/26
@@ -12,5 +12,10 @@
   </head>
   <body>
   $END$
+
+    <%
+      Person person = new Person();
+      System.out.println(person.Hello());
+    %>
   </body>
 </html>
