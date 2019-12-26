@@ -10,7 +10,7 @@
         <servlet-name>helloServlet</servlet-name>
         <!--Servlet 的全类名-->
         <servlet-class>com.atguigu.javaweb.HelloServlet</servlet-class>
-        <!-- 可以指定 Servlet 被创建的时机 -->
+        <!-- 可以指定 Servlet 被创建的时机,若为负数, 则在第一次请求时被创建.若为 0 或正数, 则在当前WEB 应用被Serlvet 容器加载时创建实例, 且数组越小越早被创建. -->
         <load-on-startup>0</load-on-startup>
     </servlet>
 
