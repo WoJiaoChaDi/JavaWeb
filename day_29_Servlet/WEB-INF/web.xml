@@ -44,15 +44,26 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.atguigu.javaweb.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
 
 
+    <!--
     <servlet>
         <servlet-name>AnyName</servlet-name>
         <servlet-class>com.atguigu.javaweb.HelloServlet</servlet-class>
         <load-on-startup>-1</load-on-startup>
     </servlet>
+    -->
 
     <!--配置通配符  带拓展名的不能带/  -->
+    <!--
     <servlet-mapping>
         <servlet-name>AnyName</servlet-name>
         <url-pattern>*.do</url-pattern>
@@ -62,5 +73,6 @@
         <servlet-name>AnyName</servlet-name>
         <url-pattern>/action/*</url-pattern>
     </servlet-mapping>
+    -->
 
 </web-app>
