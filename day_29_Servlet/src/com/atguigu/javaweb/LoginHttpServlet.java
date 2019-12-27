@@ -22,4 +22,19 @@ public class LoginHttpServlet extends HttpServlet {
 
         super.doPost(req, resp);
     }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String method = req.getMethod();
+        System.out.println(method);
+
+        StringBuffer requestURL = req.getRequestURL();
+        System.out.println(requestURL);
+
+        String user = req.getParameter("user");
+        System.out.println("user:" + user);
+
+        super.doGet(req, resp);
+    }
 }
