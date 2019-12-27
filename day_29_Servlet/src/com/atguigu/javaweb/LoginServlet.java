@@ -7,6 +7,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Enumeration;
 import java.util.Map;
 
@@ -48,7 +49,17 @@ public class LoginServlet implements Servlet {
         //获取请求的servlet名字    /loginServlet
         System.out.println(httpServletRequest.getServletPath());
 
+        //ServletResponse对象
+        //网页输出内容
+        //PrintWriter writer = servletResponse.getWriter();
+        //writer.print("HelloWorld......");
 
+        //输出MIME内容，可以参考 tomcat_home\conf\web.xml 中的内容
+        servletResponse.setContentType("application/msword");//输出doc文档
+        PrintWriter writer = servletResponse.getWriter();
+        writer.println("HelloWorld......");
+        writer.println("HelloWorld......");
+        writer.println("HelloWorld......");
     }
 
     @Override
