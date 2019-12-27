@@ -23,5 +23,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.50" level="application_server_libraries" />
+    <orderEntry type="library" name="servlet-api" level="application" />
   </component>
 </module>

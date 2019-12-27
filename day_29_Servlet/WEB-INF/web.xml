@@ -74,6 +74,30 @@
         <url-pattern>/testAttr</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <description></description>
+        <display-name>ForwardServlet</display-name>
+        <servlet-name>ForwardServlet</servlet-name>
+        <servlet-class>com.atguigu.javaweb.ForwardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ForwardServlet</servlet-name>
+        <url-pattern>/forwardServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>ForwardServlet_2</display-name>
+        <servlet-name>ForwardServlet_2</servlet-name>
+        <servlet-class>com.atguigu.javaweb.ForwardServlet_2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ForwardServlet_2</servlet-name>
+        <url-pattern>/forwardServlet_2</url-pattern>
+    </servlet-mapping>
+
+
+
     <!--
     <servlet>
         <servlet-name>AnyName</servlet-name>
