@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class LoginHttpServlet extends HttpServlet {
 
@@ -20,7 +21,6 @@ public class LoginHttpServlet extends HttpServlet {
         String user = req.getParameter("user");
         System.out.println("user:" + user);
 
-        super.doPost(req, resp);
     }
 
     @Override
@@ -35,6 +35,14 @@ public class LoginHttpServlet extends HttpServlet {
         String user = req.getParameter("user");
         System.out.println("user:" + user);
 
-        super.doGet(req, resp);
+        PrintWriter writer = resp.getWriter();
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("<html>")
+                .append("<head>")
+                .append("<h1>12345</h1>")
+                .append("</head>")
+                .append("</html>");
+        writer.print(stringBuffer.toString());
+
     }
 }
