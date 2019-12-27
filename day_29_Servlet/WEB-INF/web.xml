@@ -63,6 +63,16 @@
         <url-pattern>/loginHttpServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <description></description>
+        <display-name>TestAttr</display-name>
+        <servlet-name>TestAttr</servlet-name>
+        <servlet-class>com.atguigu.javaweb.TestAttr</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestAttr</servlet-name>
+        <url-pattern>/testAttr</url-pattern>
+    </servlet-mapping>
 
     <!--
     <servlet>
