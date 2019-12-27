@@ -17,6 +17,7 @@
 	
 		//2. 请求的重定向
 		response.sendRedirect("/day29/a_3.jsp");
+		response.sendRedirect("a_3.jsp");
 		//response.sendRedirect("http://www.atguigu.com");
 	%>
 	
