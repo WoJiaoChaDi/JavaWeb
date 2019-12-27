@@ -53,6 +53,16 @@
         <url-pattern>/loginServlet</url-pattern>
     </servlet-mapping>
 
+    <!--HttpServlet-->
+    <servlet>
+        <servlet-name>loginHttpServlet</servlet-name>
+        <servlet-class>com.atguigu.javaweb.LoginHttpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginHttpServlet</servlet-name>
+        <url-pattern>/loginHttpServlet</url-pattern>
+    </servlet-mapping>
+
 
     <!--
     <servlet>
