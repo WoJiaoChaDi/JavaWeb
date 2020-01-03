@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page session="false" errorPage="/WEB-INF/Test_Error.jsp" %><!-- 如果当前页面出错，则自动会把这个页面当做相应页面：并且是转发的形式跳转 -->
+    pageEncoding="UTF-8" isErrorPage="true" %><!-- 必须在这里指定 isErrorPage才可以使用exception对象 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<% int i = 10 / 0 ; %>
+	<h1>欢迎来到错误页面！一般错误页面放在WEB-INF中，不让浏览器直接访问到，只能转发才能访问！</h1>
+	<p>
+		Error Msg:<%= exception.getMessage() %>
+	</p>
 </body>
 </html>
