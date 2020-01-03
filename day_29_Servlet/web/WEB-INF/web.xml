@@ -107,6 +107,15 @@
         <url-pattern>/redirectServlet</url-pattern>
     </servlet-mapping>
 
+    <error-page>
+        <error-code>404</error-code>
+        <location>/Test_404_Error.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.ArithmeticException</exception-type>
+        <location>/Test_Cal_Error.jsp</location>
+    </error-page>
 
 
     <!--
