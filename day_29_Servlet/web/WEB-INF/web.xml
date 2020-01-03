@@ -108,11 +108,14 @@
     </servlet-mapping>
 
     <error-page>
+        <!--指定出错的代码：404没有指定的资源，500内部错误-->
         <error-code>404</error-code>
+        <!--指定响应页面的位置-->
         <location>/Test_404_Error.jsp</location>
     </error-page>
 
     <error-page>
+        <!--指定异常的类型-->
         <exception-type>java.lang.ArithmeticException</exception-type>
         <location>/Test_Cal_Error.jsp</location>
     </error-page>
