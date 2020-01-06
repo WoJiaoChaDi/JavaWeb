@@ -121,25 +121,21 @@
     </error-page>
 
 
-    <!--
     <servlet>
         <servlet-name>AnyName</servlet-name>
-        <servlet-class>com.atguigu.javaweb.HelloServlet</servlet-class>
+        <servlet-class>com.atguigu.javaweb.HelloAnyServlet</servlet-class>
         <load-on-startup>-1</load-on-startup>
     </servlet>
-    -->
 
     <!--配置通配符  带拓展名的不能带/  -->
-    <!--
     <servlet-mapping>
         <servlet-name>AnyName</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>AnyName</servlet-name>
-        <url-pattern>/action/*</url-pattern>
-    </servlet-mapping>
-    -->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>AnyName</servlet-name>-->
+        <!--<url-pattern>/action/*</url-pattern>-->
+    <!--</servlet-mapping>-->
 
 </web-app>
