@@ -9,6 +9,11 @@
         <listener-class>com.atguigu.javaweb.test.HelloServletContextListner</listener-class>
     </listener>
 
+    <!--配置AttributeListener-->
+    <listener>
+        <listener-class>com.atguigu.javaweb.test.TestAttributeListener</listener-class>
+    </listener>
+
     <!--测试Servlet中的转发-->
     <servlet>
         <description></description>
