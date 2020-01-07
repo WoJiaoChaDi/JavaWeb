@@ -66,4 +66,15 @@
         <filter-name>PasswordFilter</filter-name>
         <url-pattern>/login/hello.jsp</url-pattern>
     </filter-mapping>
+
+    <!--禁止缓存的filter-->
+    <filter>
+        <display-name>NoCacheFilter</display-name>
+        <filter-name>NoCacheFilter</filter-name>
+        <filter-class>com.atguigu.javaweb.cache.NoCacheFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>NoCacheFilter</filter-name>
+        <url-pattern>/cache/*</url-pattern>
+    </filter-mapping>
 </web-app>
