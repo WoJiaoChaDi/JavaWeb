@@ -12,13 +12,13 @@ public class HelloFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        System.out.println("Filter..init..");
+        System.out.println("HelloFilter..init..");
 
     }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("Filter..doFilter..");
+        System.out.println("HelloFilter..doFilter..");
 
         //将请求放行
         filterChain.doFilter(servletRequest, servletResponse);
@@ -27,7 +27,7 @@ public class HelloFilter implements Filter {
 
     @Override
     public void destroy() {
-        System.out.println("Filter..destroy..");
+        System.out.println("HelloFilter..destroy..");
 
     }
 }

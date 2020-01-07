@@ -14,10 +14,20 @@
             <param-value>root</param-value>
         </init-param>
     </filter>
-
     <!--映射Filter-->
     <filter-mapping>
         <filter-name>helloFilter</filter-name>
+        <url-pattern>/test.jsp</url-pattern>
+    </filter-mapping>
+
+    <!--注册Filter-->
+    <filter>
+        <filter-name>secondFilter</filter-name>
+        <filter-class>com.aituigu.javaweb.SecondFilter</filter-class>
+    </filter>
+    <!--映射Filter-->
+    <filter-mapping>
+        <filter-name>secondFilter</filter-name>
         <url-pattern>/test.jsp</url-pattern>
     </filter-mapping>
 
