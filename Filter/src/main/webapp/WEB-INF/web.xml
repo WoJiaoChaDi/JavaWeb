@@ -77,4 +77,20 @@
         <filter-name>NoCacheFilter</filter-name>
         <url-pattern>/cache/*</url-pattern>
     </filter-mapping>
+
+    <!--字符编码的过滤器-->
+    <context-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </context-param>
+
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>com.atguigu.javaweb.encoding.EncodingFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/encoding/*</url-pattern>
+    </filter-mapping>
 </web-app>
