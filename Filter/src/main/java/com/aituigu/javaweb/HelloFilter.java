@@ -20,6 +20,9 @@ public class HelloFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("Filter..doFilter..");
 
+        //将请求放行
+        filterChain.doFilter(servletRequest, servletResponse);
+
     }
 
     @Override
