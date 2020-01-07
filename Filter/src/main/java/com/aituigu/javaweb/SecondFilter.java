@@ -20,7 +20,7 @@ public class SecondFilter implements Filter{
 			FilterChain chain) throws IOException, ServletException {
 		System.out.println("3. Before SecondFilter's chain.doFilter ..."); //3
 
-		//放行
+        //将请求放行，继续执行后面的filter
 		chain.doFilter(request, response);
 		
 		System.out.println("4. After SecondFilter's chain.doFilter ..."); //4

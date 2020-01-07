@@ -17,11 +17,11 @@ public class HelloFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
         System.out.println("HelloFilter..doFilter..");
 
-        //将请求放行
-        filterChain.doFilter(servletRequest, servletResponse);
+        //将请求放行，继续执行后面的filter
+        chain.doFilter(servletRequest, servletResponse);
 
     }
 
