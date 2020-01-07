@@ -24,7 +24,4 @@ public class NoCacheFilter extends HttpFilter {
 		
 		filterChain.doFilter(request, response);
 	}
-
-    
-
 }
