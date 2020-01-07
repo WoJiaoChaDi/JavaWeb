@@ -4,10 +4,15 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>1234</param-value>
+    </context-param>
+
     <!--注册Filter-->
     <filter>
         <filter-name>helloFilter</filter-name>
-        <filter-class>com.aituigu.javaweb.HelloFilter</filter-class>
+        <filter-class>com.atguigu.javaweb.HelloFilter</filter-class>
         <!--初始化参数-->
         <init-param>
             <param-name>name</param-name>
@@ -23,7 +28,7 @@
     <!--注册Filter-->
     <filter>
         <filter-name>secondFilter</filter-name>
-        <filter-class>com.aituigu.javaweb.SecondFilter</filter-class>
+        <filter-class>com.atguigu.javaweb.SecondFilter</filter-class>
     </filter>
     <!--映射Filter-->
     <filter-mapping>
@@ -31,4 +36,27 @@
         <url-pattern>/test.jsp</url-pattern>
     </filter-mapping>
 
+    <!--登陆拦截器-->
+    <filter>
+        <display-name>UserNameFilter</display-name>
+        <filter-name>UserNameFilter</filter-name>
+        <filter-class>com.atguigu.javaweb.login.UserNameFilter</filter-class>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>Tom</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>UserNameFilter</filter-name>
+        <url-pattern>/login/hello.jsp</url-pattern>
+    </filter-mapping>
+    <filter>
+        <display-name>PasswordFilter</display-name>
+        <filter-name>PasswordFilter</filter-name>
+        <filter-class>com.atguigu.javaweb.login.PasswordFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>PasswordFilter</filter-name>
+        <url-pattern>/login/hello.jsp</url-pattern>
+    </filter-mapping>
 </web-app>
