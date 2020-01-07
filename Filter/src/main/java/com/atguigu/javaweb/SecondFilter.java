@@ -18,12 +18,12 @@ public class SecondFilter implements Filter{
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-		System.out.println("3. Before SecondFilter's chain.doFilter ..."); //3
+		System.out.println("3. Before SecondFilter's chain.doFilter ...");
 
         //将请求放行，继续执行后面的filter
 		chain.doFilter(request, response);
 		
-		System.out.println("4. After SecondFilter's chain.doFilter ..."); //4
+		System.out.println("4. After SecondFilter's chain.doFilter ...");
 	}
 
 	//

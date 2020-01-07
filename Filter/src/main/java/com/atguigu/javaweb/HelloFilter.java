@@ -18,11 +18,12 @@ public class HelloFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
-        System.out.println("HelloFilter..doFilter..");
+        System.out.println("1. Before HelloFilter..oFilter..");
 
         //将请求放行，继续执行后面的filter
         chain.doFilter(servletRequest, servletResponse);
 
+        System.out.println("2. After HelloFilter..doFilter..");
     }
 
     @Override
