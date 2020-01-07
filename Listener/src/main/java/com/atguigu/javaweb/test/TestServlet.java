@@ -19,8 +19,10 @@ public class TestServlet extends HttpServlet {
 
 		request.setAttribute("requestKey", "requestValue2");
 		//通过监听器看到，从头到尾只有一个请求，所以第二个页面可以获取request内的参数
-		request.getRequestDispatcher("/test.jsp").forward(request, response);
-	
+		//request.getRequestDispatcher("/test.jsp").forward(request, response);
+
+		//重定向是两个请求，所以获取不到
+		response.sendRedirect("test.jsp");
 	}
 
 }
