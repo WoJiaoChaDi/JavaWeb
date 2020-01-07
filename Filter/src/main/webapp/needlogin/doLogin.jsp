@@ -14,8 +14,8 @@
 		
 		//2. 若登录信息完整, 则把登录信息放到 HttpSession
 		if(username != null && !username.trim().equals("")){ 
-			session.setAttribute("user", username);
-			//session.setAttribute(application.getInitParameter("userSessionKey"), username);
+			//session.setAttribute("user", username);
+			session.setAttribute(application.getInitParameter("userSessionKey"), username);
 			//3. 重定向到 list.jsp
 			response.sendRedirect("list.jsp");
 		}else{

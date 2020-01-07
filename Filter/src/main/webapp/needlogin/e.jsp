@@ -8,14 +8,14 @@
 </head>
 <body>
 
-	<%
+	<%--
 		//检验用户是否登录. 若没有登录, 则直接重定向到 login.jsp
 		Object user = session.getAttribute("user");
 
 		if(user == null){
 			response.sendRedirect("login.jsp");
 		}
-	%>
+	--%>
 	
 	<h4>EEE PAGE</h4>
 
