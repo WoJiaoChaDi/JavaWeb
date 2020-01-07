@@ -1,4 +1,4 @@
-package com.aituigu.javaweb;
+package com.atguigu.javaweb;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
