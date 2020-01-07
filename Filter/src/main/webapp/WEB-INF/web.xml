@@ -34,6 +34,9 @@
     <filter-mapping>
         <filter-name>secondFilter</filter-name>
         <url-pattern>/test.jsp</url-pattern>
+        <!--将转发也放入过滤器，默认只有REQUEST-->
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
 
     <!--登陆拦截器-->
