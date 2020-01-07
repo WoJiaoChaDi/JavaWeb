@@ -9,14 +9,16 @@
 <body>
 	
 	<h4>Index Page</h4>
-	
+
+	<%--通过链接跳转的是两个request请求，所以第二个页面无法获取到request请求中的参数--%>
 	<a href="test.jsp">To Test Page</a>
 	
-	<%-- 
+	<%
+		//通过生命周期可以发现，用forward是在同一个request请求中，所以request请求中的参数才可以通用
 		request.setAttribute("requestKey", "requestValue");
+	%>
 		<jsp:forward page="/test.jsp"></jsp:forward>
-	--%>
-	
+
 	<br><br>
 	
 	<a href="TestServlet">TestServlet</a>

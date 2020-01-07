@@ -12,6 +12,9 @@
 
 	<%--销毁session--%>
 	<% session.invalidate(); %>
-	
+
+	<%--获取request的参数--%>
+	<%= request.getAttribute("requestKey") %>
+
 </body>
 </html>
