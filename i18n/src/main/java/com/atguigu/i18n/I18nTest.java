@@ -3,6 +3,7 @@ package com.atguigu.i18n;
 import org.junit.Test;
 
 import java.text.DateFormat;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -82,6 +83,32 @@ public class I18nTest{
         System.out.println(date);
     }
 
+    @Test
+    public void testNumberFormat() throws ParseException {
+        double d = 123456789.12345d;
+        //Locale locale = Locale.US;
+        //Locale locale = Locale.CHINA;
+        Locale locale = Locale.FRANCE;
+
+        //按照地区，数字格式化
+        NumberFormat numberFormat = NumberFormat.getNumberInstance(locale);
+        String str = numberFormat.format(d);
+        System.out.println(str);
+
+        //按照地区，货币格式化
+        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(locale);
+        str = currencyFormat.format(d);
+        System.out.println(str);
+
+        //字符串转数字
+        str = "123,456,789.123";
+        Number num = numberFormat.parse(str);
+        System.out.println(num);
+
+        str = "123 456 789,12 €";
+        Number currency = currencyFormat.parse(str);
+        System.out.println(currency);
+    }
 
 
 }
