@@ -38,15 +38,13 @@ public class I18nTest{
      * 1. 若只希望通过 DateFormat 把一个 Date 对象转为一个字符串, 则可以通过 DateFormat 的工厂方法来获取 DateFormat 对象
      * 2. 可以获取只格式化 Date 的 DateFormat 对象: getDateInstance(int style, Locale aLocale)
      * 3. 可以获取只格式化 Time 的 DateFormat 对象: getTimeInstance(int style, Locale aLocale)
-     * 4. 可以获取既格式化 Date, 也格式化 Time 的 DateFormat 对象:
-     * getDateTimeInstance(int dateStyle, int timeStyle, Locale aLocale)
+     * 4. 可以获取既格式化 Date, 也格式化 Time 的 DateFormat 对象:getDateTimeInstance(int dateStyle, int timeStyle, Locale aLocale)
      * 5. 其中 style 可以取值为: DateFormat 的常量: SHORT, MEDIUM, LONG, FULL. Locale 则为代表国家地区的 Locale 对象
      * 6. 通过 DateFormat 的 format 方法来格式化个 Date 对象到字符串.
      *
      * 7. 若有一个字符串, 如何解析为一个 Date 对象呢 ?
-     * I. 先创建 DateFormat 对象: 创建 DateFormat 的子类 SimpleDateFormat 对象
-     * SimpleDateFormat(String pattern).
-     * 其中 pattern 为日期, 时间的格式, 例如: yyyy-MM-dd hh:mm:ss
+     * I. 先创建 DateFormat 对象: 创建 DateFormat 的子类 SimpleDateFormat 对象 SimpleDateFormat(String pattern).
+     *          其中 pattern 为日期, 时间的格式, 例如: yyyy-MM-dd hh:mm:ss
      * II. 调用 DateFormat 的 parse 方法来解析字符串到 Date 对象.
      *
      */
