@@ -83,6 +83,15 @@ public class I18nTest{
         System.out.println(date);
     }
 
+    /**
+     * NumberFormat: 格式化数字到数字字符串, 或货币字符串的工具类
+     * 1. 通过工厂方法获取 NumberFormat 对象
+     * NumberFormat.getNumberInstance(locale); //仅格式化为数字的字符串
+     * NumberFormat.getCurrencyInstance(locale); //格式为货币的字符串
+     *
+     * 2. 通过 format 方法来进行格式化
+     * 3. 通过 parse 方法把一个字符串解析为一个 Number 类型.
+     */
     @Test
     public void testNumberFormat() throws ParseException {
         double d = 123456789.12345d;
