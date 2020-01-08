@@ -36,6 +36,7 @@
 	<%
 		String code = request.getParameter("code");
 
+		//根据请求的参数转换国际化语言
 		if(code != null){
 			if("en".equals(code)){
 				session.setAttribute("locale", Locale.US);
@@ -45,6 +46,7 @@
 		}
 	%>
 
+	<%--在fmt:setBundle 之前设置session中的locale--%>
 	<c:if test="${sessionScope.locale != null }">
 		<fmt:setLocale value="${sessionScope.locale }"/>
 	</c:if>
