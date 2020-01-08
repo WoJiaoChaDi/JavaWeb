@@ -3,6 +3,7 @@ package com.atguigu.i18n;
 import org.junit.Test;
 
 import java.text.DateFormat;
+import java.text.MessageFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -117,6 +118,30 @@ public class I18nTest{
         str = "123 456 789,12 €";
         Number currency = currencyFormat.parse(str);
         System.out.println(currency);
+    }
+
+    /**
+     * MessageFormat: 可以格式化模式字符串
+     * 模式字符串: 带占位符的字符串: "Date: {0}, Salary: {1}"
+     * 可以通过 format 方法会模式字符串进行格式化
+     */
+    @Test
+    public void testMessageFormat() {
+        String str = "Date：{0}， Salary：{1}";
+
+        Date date = new Date();
+        double sal = 12345.12;
+
+        String result = MessageFormat.format(str, date, sal);
+        System.out.println(result);
+
+        Locale locale = Locale.CHINA;
+        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, locale);
+
+        NumberFormat currencyInstance = NumberFormat.getCurrencyInstance(locale);
+
+        String result2 = MessageFormat.format(str, dateFormat.format(date), currencyInstance.format(sal));
+        System.out.println(result2);
     }
 
 
