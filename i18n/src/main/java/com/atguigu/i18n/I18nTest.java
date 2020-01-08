@@ -9,6 +9,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class I18nTest{
 
@@ -144,5 +145,43 @@ public class I18nTest{
         System.out.println(result2);
     }
 
+    /**
+     * ResourceBundle: 资源包类.
+     *
+     * 1. 在类路径下需要有对应的资源文件: baseName.properties. 其中 baseName 是基名.
+     * 2. 可以使用 基名_语言代码_国家代码.properties 来添加不同国家或地区的资源文件. i18n_zh_CN.properties
+     * 3. 要求所有基名相同的资源文件的 key 必须完全一致.
+     * 4. 可以使用 native2ascii 命令来得到 汉字 对一个的 asc 码. Eclipse 内置了工具
+     * 5. 可以调用 ResourceBundle 的 getBundle(基名, Locale 实例) 获取获取 ResourceBundle 对象
+     * 6. 可以调用 ResourceBundle 的 getString(key) 来获取资源文件的 value 字符串的值.
+     * 7. 结合 DateFormat, NumberFormat, MessageFormat 即可实现国际化.
+     *
+     */
+    @Test
+    public void testResourceBundle() {
+        //Locale locale = Locale.US;
+        Locale locale = Locale.CHINA;
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("i18n", locale);
+        System.out.println(resourceBundle.getString("date"));
+        System.out.println(resourceBundle.getString("salary"));
+
+        //各种国际化联合起来
+        String dateLabel = resourceBundle.getString("date");
+        String salLabel = resourceBundle.getString("salary");
+
+        String str = "{0}:{1}，{2}:{3}";
+
+        Date date = new Date();
+        double sal = 12345.12;
+
+        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, locale);
+        String dateStr = dateFormat.format(date);
+
+        NumberFormat numberFormat = NumberFormat.getCurrencyInstance(locale);
+        String salStr = numberFormat.format(sal);
+
+        String result = MessageFormat.format(str, dateLabel, dateStr, salLabel, salStr);
+        System.out.println(result);
+    }
 
 }
